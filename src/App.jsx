@@ -1,9 +1,9 @@
-import Card from './components/onecard'
+import ImageGenerator from './components/textToImage'
 
 function App() {
   return (
     <>
-<Card/>
+<ImageGenerator/>
 
     </>
   );
