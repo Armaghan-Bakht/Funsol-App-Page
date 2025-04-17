@@ -2,7 +2,7 @@ import Girl1 from "../assets/Girl1.png";
 import Girl2 from "../assets/Car.jpg";
 import Girl3 from "../assets/Sea-Girl.jpg";
 import stars from '../assets/stars.png'
-import contact from "../assets/Contacts.png"
+import contact from "../assets/contacts.png"
 
 import { Sparkles } from "lucide-react";
 import React, { useState, useEffect } from "react";
