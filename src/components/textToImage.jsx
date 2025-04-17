@@ -1,9 +1,49 @@
-import Girl from '../assets/Girl.png';
-import divBackground from "../assets/Button-background.png";
+import Girl from "../assets/Girl.png";
+import { Sparkles } from "lucide-react";
+import React, { useState, useEffect } from 'react';
+// import divBackground from "../assets/Button-background.png";
 
 const OneCardPage = () => {
+  const [placeholder, setPlaceholder] = useState('');
+  const [placeholderIndex, setPlaceholderIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  const placeholderTexts = [
+    "Search for AI tools...",
+    "Find creative prompts...",
+    "Discover new ideas..."
+  ];
+
+  useEffect(() => {
+    // Decrease these values to make typing faster
+    const typingSpeed = isDeleting ? 30 : 100; // ⚡ Faster speeds (was 50 and 150)
+    
+    const currentText = placeholderTexts[placeholderIndex];
+  
+    const timeout = setTimeout(() => {
+      if (isDeleting) {
+        setPlaceholder(currentText.substring(0, charIndex - 1));
+        setCharIndex(charIndex - 1);
+  
+        if (charIndex === 0) {
+          setIsDeleting(false);
+          setPlaceholderIndex((placeholderIndex + 1) % placeholderTexts.length);
+        }
+      } else {
+        setPlaceholder(currentText.substring(0, charIndex + 1));
+        setCharIndex(charIndex + 1);
+  
+        if (charIndex === currentText.length) {
+          setTimeout(() => setIsDeleting(true), 800); // ⚡ Reduced pause (was 1000ms)
+        }
+      }
+    }, typingSpeed);
+  
+    return () => clearTimeout(timeout);
+  }, [charIndex, isDeleting, placeholderIndex]);
   return (
-    <div className="min-h-screen flex items-center justify-center bg-black relative overflow-hidden p-4 sm:p-8" >
+    <div className="min-h-screen flex items-center justify-center bg-black relative overflow-hidden p-4 sm:p-8">
       {/* 🔴 Pink Top-Left Blob - Responsive sizing */}
       <div className="absolute top-0 left-0 w-[150px] h-[150px] sm:w-[300px] sm:h-[300px] bg-gradient-to-br from-pink-400 to-[#C74EC8] rounded-full blur-[80px] sm:blur-[130px] opacity-60 z-0"></div>
 
@@ -21,9 +61,26 @@ const OneCardPage = () => {
             />
           </div>
 
-            {/* Prompt button - Responsive positioning */}
-            <div className="absolute bottom-2 sm:bottom-4 left-1/2 transform -translate-x-1/2 w-[90%] max-w-[500px] ">
-              <div
+          {/* Prompt button - Responsive positioning */}
+          <div className="absolute bottom-2 sm:bottom-4 left-1/2 transform -translate-x-1/2 w-[90%] max-w-[500px] ">
+          <div className="w-full max-w-3xl mx-auto">
+      <div className="relative flex items-center">
+        <div className="relative w-full">
+          <input
+            className="w-full h-14 pl-4 pr-4 text-base bg-white rounded-full border-0 shadow-sm focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2"
+            type="text"
+            placeholder={placeholder}
+          />
+        </div>
+        <div className="absolute right-1.5">
+          <button className="h-11 px-5 rounded-full bg-violet-500  hover:bg-violet-600 text-white font-light flex items-center transition-colors duration-200">
+          <Sparkles className="mr-2 h-4 w-4 animate-pulse-scale " />
+            Create
+          </button>
+        </div>
+      </div>
+    </div>  
+            {/* <div
                 style={{
                   backgroundImage: `url(${divBackground})`,
                   backgroundSize: "cover",
@@ -32,18 +89,21 @@ const OneCardPage = () => {
                 className="text-white text-xs sm:text-sm py-3 sm:py-5 px-4 sm:px-6 rounded-lg sm:rounded-xl shadow-md w-full sm:w-sm mx-auto"
               >
                 Close Up On Beautiful Girl Portrait Near Tree
-              </div>
-            </div>
+              </div> */}
           </div>
+        </div>
 
         {/* Text Section - Responsive typography */}
-        <h1 className="text-2xl sm:text-4xl font-bold text-white mt-6 sm:mt-8">Text To Image</h1>
+        <h1 className="text-2xl sm:text-4xl font-bold text-white mt-6 sm:mt-8">
+          Text To Image
+        </h1>
         <p className="text-gray-400 mt-2 sm:mt-4 max-w-[600px] mx-auto text-sm sm:text-base px-4">
-          Effortlessly transform your words into stunning AI-generated art, unique illustrations, & creative visuals within seconds!
+          Effortlessly transform your words into stunning AI-generated art,
+          unique illustrations, & creative visuals within seconds!
         </p>
 
         {/* Generate Button - Responsive sizing */}
-        <button className="mt-4 sm:mt-6 bg-gradient-to-r from-[#C74EC8] to-[#8181FF] text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-full shadow-lg hover:from-[#D15FD1] hover:to-[#9191FF] transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#C74EC8] focus:ring-opacity-50 text-sm sm:text-base">
+        <button className="mt-4 sm:mt-6 bg-gradient-to-r from-[#C74EC8] to-[#8181FF] text-white font-light py-2 sm:py-3 px-4 sm:px-6 rounded-full shadow-lg hover:from-[#D15FD1] hover:to-[#9191FF] transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#C74EC8] focus:ring-opacity-50 text-sm sm:text-base">
           Generate Image
         </button>
       </div>
