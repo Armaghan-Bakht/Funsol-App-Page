@@ -48,6 +48,7 @@ const OneCardPage = () => {
     }, typingSpeed);
 
     return () => clearTimeout(timeout);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [charIndex, isDeleting, placeholderIndex]);
 
   return (
