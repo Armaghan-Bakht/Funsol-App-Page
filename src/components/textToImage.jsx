@@ -1,6 +1,9 @@
 import Girl1 from "../assets/Girl1.png";
 import Girl2 from "../assets/Car.jpg";
 import Girl3 from "../assets/Sea-Girl.jpg";
+import stars from '../assets/stars.png'
+import contact from "../assets/Contacts.png"
+
 import { Sparkles } from "lucide-react";
 import React, { useState, useEffect } from "react";
 // import divBackground from "../assets/Button-background.png";
@@ -73,7 +76,7 @@ const OneCardPage = () => {
                 type="text"
                 placeholder={placeholder}
               />
-              <button className="absolute right-1.5 h-11 px-5 rounded-full bg-gradient-to-r from-violet-500 to-violet-600 hover:from-violet-600 hover:to-violet-700 text-white font-medium flex items-center transition-all duration-300 group">
+              <button className="cursor-pointer absolute right-1.5 h-11 px-5 rounded-full bg-gradient-to-r from-violet-800 to-violet-500 hover:from-violet-600 hover:to-violet-700 text-white font-medium flex items-center transition-all duration-300 group">
                 <Sparkles className="mr-2 h-4 w-4 animate-pulse-scale group-hover:animate-none group-hover:scale-110 transition-transform" />
                 Create
               </button>
@@ -81,8 +84,25 @@ const OneCardPage = () => {
           </div>
         </div>
 
+
+{/* ___________  */}
+<div className=" z-20 text-white  mx-auto py-5">
+  <div className="flex justify-around ">
+    <div>
+      <div><img src={stars} className="mx-auto" alt="" /></div>
+      <div className="text-[12px] text-[#CECED1] mt-1">Unlimited Generation</div>
+    </div>
+    <div className="text-white text-2xl mt-2 font-extralight">|</div>
+    <div>
+    <div><img src={contact} className="mx-auto" alt="" /></div>
+    <div className="text-[12px] text-[#CECED1] mt-1">Quick Response</div>
+    </div>
+  </div>
+</div>
+
+
         {/* Text + Button */}
-        <h1 className="text-2xl sm:text-4xl font-bold text-white mt-6 sm:mt-8">
+        <h1 className="text-2xl sm:text-4xl font-bold text-white sm:mt-8">
           Text To Image
         </h1>
         <p className="text-gray-400 mt-2 sm:mt-4 max-w-[600px] mx-auto text-sm sm:text-base px-4">
