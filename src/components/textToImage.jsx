@@ -22,14 +22,14 @@ const OneCardPage = () => {
           </div>
 
             {/* Prompt button - Responsive positioning */}
-            <div className="absolute bottom-2 sm:bottom-4 left-1/2 transform -translate-x-1/2 w-[90%] max-w-[500px]">
+            <div className="absolute bottom-2 sm:bottom-4 left-1/2 transform -translate-x-1/2 w-[90%] max-w-[500px] ">
               <div
                 style={{
                   backgroundImage: `url(${divBackground})`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}
-                className="text-white text-xs sm:text-sm py-3 sm:py-5 px-4 sm:px-6 rounded-lg sm:rounded-xl shadow-md w-full"
+                className="text-white text-xs sm:text-sm py-3 sm:py-5 px-4 sm:px-6 rounded-lg sm:rounded-xl shadow-md w-full sm:w-sm mx-auto"
               >
                 Close Up On Beautiful Girl Portrait Near Tree
               </div>
