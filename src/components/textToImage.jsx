@@ -88,7 +88,7 @@ const OneCardPage = () => {
         </div>
 
         {/* ___________  */}
-        <div className=" z-20 text-white  mx-auto py-5 ">
+        <div className=" z-20 text-white  mx-auto py-1   sm:py-5 ">
           <div className="flex items-center justify-center py-6">
             {/* First Feature */}
             <div className="w-1/2 flex justify-end pr-6">
@@ -114,7 +114,8 @@ const OneCardPage = () => {
         </div>
 
         {/* Text + Button */}
-        <h1 className="text-2xl sm:text-4xl font-bold text-white sm:mt-8">
+        <div className="">
+        <h1 className="text-2xl sm:text-4xl font-bold text-white  sm:mt-8">
           Text To Image
         </h1>
         <p className="text-gray-400 mt-2 sm:mt-4 max-w-[600px] mx-auto text-sm sm:text-base px-4">
@@ -124,6 +125,7 @@ const OneCardPage = () => {
         <button className="mt-4 sm:mt-6 bg-gradient-to-r from-[#C74EC8] to-[#8181FF] text-white font-light py-2 sm:py-3 px-4 sm:px-6 rounded-full shadow-lg hover:from-[#D15FD1] hover:to-[#9191FF] transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#C74EC8] focus:ring-opacity-50 text-sm sm:text-base">
           Generate Image
         </button>
+        </div>
       </div>
     </div>
   );
