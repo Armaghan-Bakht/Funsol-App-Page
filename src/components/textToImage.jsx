@@ -89,7 +89,7 @@ const OneCardPage = () => {
 
         {/* ___________  */}
         <div className=" z-20 text-white  mx-auto py-5 ">
-          <div className="flex items-center justify-center py-6 border">
+          <div className="flex items-center justify-center py-6">
             {/* First Feature */}
             <div className="w-1/2 flex justify-end pr-6">
               <div className="flex flex-col items-center text-center space-y-1">
