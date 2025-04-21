@@ -63,7 +63,7 @@ const OneCardPage = () => {
       <div className="text-center relative z-10 w-full max-w-4xl">
         <div className="relative mx-auto">
           {/* 🔁 Dynamic Image based on placeholder */}
-          <div className="bg-gradient-to-r p-1 rounded-xl h-[470px] sm:h-[380px] w-full max-w-[650px] mx-auto overflow-hidden">
+          <div className="bg-gradient-to-r p-1 rounded-xl h-[400px] sm:h-[380px] w-full max-w-[650px] mx-auto overflow-hidden">
             <img
               src={promptImageData[currentImageIndex].image}
               alt="Generated Prompt"
@@ -94,7 +94,7 @@ const OneCardPage = () => {
             <div className="w-1/2 flex justify-end pr-6">
               <div className="flex flex-col items-center text-center space-y-1">
                 <img src={stars} alt="Unlimited" className="w-6 h-6" />
-                <span className="text-[10px] text-[#CECED1]">
+                <span className="text-[12px] text-[#CECED1]">
                   Unlimited Generation
                 </span>
               </div>
@@ -107,7 +107,7 @@ const OneCardPage = () => {
             <div className="w-1/2 flex justify-start pl-8">
               <div className="flex flex-col items-center text-center space-y-1">
                 <img src={contact} alt="Quick Response" className="w-6 h-6" />
-                <span className="text-[10px] text-[#CECED1]">Quick Response</span>
+                <span className="text-[12px] text-[#CECED1]">Quick Response</span>
               </div>
             </div>
           </div>
