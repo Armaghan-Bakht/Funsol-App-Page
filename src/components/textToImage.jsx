@@ -1,8 +1,8 @@
 import Girl1 from "../assets/Girl1.png";
 import Girl2 from "../assets/Car.jpg";
 import Girl3 from "../assets/Sea-Girl.jpg";
-import stars from '../assets/stars.png'
-import contact from "../assets/contacts.png"
+import stars from "../assets/stars.png";
+import contact from "../assets/contacts.png";
 
 import { Sparkles } from "lucide-react";
 import React, { useState, useEffect } from "react";
@@ -11,7 +11,10 @@ const OneCardPage = () => {
   const promptImageData = [
     { text: "Create an image of a Beautiful Girl", image: Girl1 },
     { text: "Create an image of a realistic Car", image: Girl2 },
-    { text: "A girl is lying on a skateboard, skating in the ocean.", image: Girl3 },
+    {
+      text: "A girl is lying on a skateboard, skating in the ocean.",
+      image: Girl3,
+    },
   ];
 
   const [placeholder, setPlaceholder] = useState("");
@@ -48,7 +51,7 @@ const OneCardPage = () => {
     }, typingSpeed);
 
     return () => clearTimeout(timeout);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [charIndex, isDeleting, placeholderIndex]);
 
   return (
@@ -60,13 +63,12 @@ const OneCardPage = () => {
       <div className="text-center relative z-10 w-full max-w-4xl">
         <div className="relative mx-auto">
           {/* 🔁 Dynamic Image based on placeholder */}
-          <div className="bg-gradient-to-r p-1 rounded-xl h-[200px] sm:h-[380px] w-full max-w-[650px] mx-auto overflow-hidden">
-          <img
-  src={promptImageData[currentImageIndex].image}
-  alt="Generated Prompt"
-  className="w-full h-full object-cover object-center rounded-xl transition-opacity duration-700"
-/>
-
+          <div className="bg-gradient-to-r p-1 rounded-xl h-[470px] sm:h-[380px] w-full max-w-[650px] mx-auto overflow-hidden">
+            <img
+              src={promptImageData[currentImageIndex].image}
+              alt="Generated Prompt"
+              className="w-full h-full object-cover object-center rounded-xl transition-opacity duration-700"
+            />
           </div>
 
           {/* Search Bar */}
@@ -85,22 +87,31 @@ const OneCardPage = () => {
           </div>
         </div>
 
+        {/* ___________  */}
+        <div className=" z-20 text-white  mx-auto py-5 ">
+          <div className="flex items-center justify-center py-6 border">
+            {/* First Feature */}
+            <div className="w-1/2 flex justify-end pr-6">
+              <div className="flex flex-col items-center text-center space-y-1">
+                <img src={stars} alt="Unlimited" className="w-6 h-6" />
+                <span className="text-[10px] text-[#CECED1]">
+                  Unlimited Generation
+                </span>
+              </div>
+            </div>
 
-{/* ___________  */}
-<div className=" z-20 text-white  mx-auto py-5">
-  <div className="flex justify-around ">
-    <div>
-      <div><img src={stars} className="mx-auto" alt="" /></div>
-      <div className="text-[12px] text-[#CECED1] mt-1">Unlimited Generation</div>
-    </div>
-    <div className="text-white text-2xl mt-2 font-extralight">|</div>
-    <div>
-    <div><img src={contact} className="mx-auto" alt="" /></div>
-    <div className="text-[12px] text-[#CECED1] mt-1">Quick Response</div>
-    </div>
-  </div>
-</div>
+            {/* Vertical Divider */}
+            <div className="w-px h-6 bg-[#3B3B3D]"></div>
 
+            {/* Second Feature */}
+            <div className="w-1/2 flex justify-start pl-8">
+              <div className="flex flex-col items-center text-center space-y-1">
+                <img src={contact} alt="Quick Response" className="w-6 h-6" />
+                <span className="text-[10px] text-[#CECED1]">Quick Response</span>
+              </div>
+            </div>
+          </div>
+        </div>
 
         {/* Text + Button */}
         <h1 className="text-2xl sm:text-4xl font-bold text-white sm:mt-8">
