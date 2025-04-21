@@ -55,7 +55,7 @@ const OneCardPage = () => {
   }, [charIndex, isDeleting, placeholderIndex]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-black relative overflow-hidden p-4 sm:p-8">
+    <div className="min-h-screen flex items-center justify-center bg-black relative overflow-hidden p-4 sm:p-8 h-screen">
       {/* Gradient blobs */}
       <div className="absolute top-0 left-0 w-[150px] h-[150px] sm:w-[300px] sm:h-[300px] bg-gradient-to-br from-pink-400 to-[#C74EC8] rounded-full blur-[80px] sm:blur-[130px] opacity-60 z-0"></div>
       <div className="absolute bottom-0 right-0 w-[150px] h-[150px] sm:w-[300px] sm:h-[300px] bg-[#8181FF] rounded-full blur-[80px] sm:blur-[120px] opacity-50 z-0"></div>
