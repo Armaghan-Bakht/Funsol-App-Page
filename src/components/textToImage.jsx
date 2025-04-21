@@ -72,14 +72,14 @@ const OneCardPage = () => {
           </div>
 
           {/* Search Bar */}
-          <div className="absolute bottom-2 sm:bottom-4 left-1/2 transform -translate-x-1/2 w-[90%] max-w-[500px]">
+          <div className="absolute bottom-4 sm:bottom-4 left-1/2 transform -translate-x-1/2 w-[90%] max-w-[500px]">
             <div className="relative flex items-center">
               <input
-                className="w-full h-14 pl-4 pr-4 text-base bg-white rounded-full border-0 shadow-sm focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2"
+                className="w-full h-12 sm:h-14 pl-4 pr-4 text-base bg-white rounded-full border-0 shadow-sm focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2"
                 type="text"
                 placeholder={placeholder}
               />
-              <button className="cursor-pointer absolute right-1.5 h-11 px-5 rounded-full bg-gradient-to-r from-violet-800 to-violet-500 hover:from-violet-600 hover:to-violet-700 text-white font-medium flex items-center transition-all duration-300 group">
+              <button className="cursor-pointer absolute right-1.5 h-9 sm:h-11 px-5 rounded-full bg-gradient-to-r from-violet-800 to-violet-500 hover:from-violet-600 hover:to-violet-700 text-white font-medium flex items-center transition-all duration-300 group">
                 <Sparkles className="mr-2 h-4 w-4 animate-pulse-scale group-hover:animate-none group-hover:scale-110 transition-transform" />
                 Create
               </button>
